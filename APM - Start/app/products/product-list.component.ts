@@ -1,4 +1,5 @@
 import { Component } from 'angular2/core';
+import { IProduct } from '/product.ts';
 
 @Component({
     selector: 'pm-products',
@@ -7,7 +8,9 @@ import { Component } from 'angular2/core';
 
 export class ProductListComponent {
     pageTitle:string = 'Product List';
-    products:any[] = [
+    showImage:boolean = true;
+    listFilter:string = 'cart';
+    products:Iproduct[] = [
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -58,5 +61,9 @@ export class ProductListComponent {
             "starRating": 4.6,
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
         }
-    ]
+    ];
+
+    toggleImage():viod {
+        this.showImage = !this.showImage;
+    }
 }
