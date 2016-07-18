@@ -1,5 +1,6 @@
 import { Component } from 'angular2/core';
 import { ProductListComponent } from './products/product-list.component';
+import { StarComponent } from './shared/star.component';
 
 
 @Component({

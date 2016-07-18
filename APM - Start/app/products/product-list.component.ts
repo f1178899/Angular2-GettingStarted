@@ -1,9 +1,15 @@
 import { Component } from 'angular2/core';
+
 import { IProduct } from './product';
+import { productFilterPipe } from './product-filter.pipe';
+import { StarComponent } from '../shared/star.component';
 
 @Component({
     selector: 'pm-products',
-    templateUrl: '/app/products/product-list.component.html'
+    templateUrl: '/app/products/product-list.component.html',
+    pipes: [productFilterPipe],
+    directives: [StarComponent]
+
 })
 
 export class ProductListComponent {

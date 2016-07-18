@@ -25,14 +25,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="#product of products">
+                    <tr *ngFor='#product of products | productFilter: listFilter'>
                         <td><img *ngIf="showImage" [src]="product.imageUrl" [style.width.px]="50"></td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productId}}</td>
                         <td>{{product.productCode | lowercase}}</td>
                         <td>{{product.releaseDate }}</td>
                         <td>{{product.price | currency:'USD':true:'1.2-2' | lowercase}}</td>
-                        <td>{{product.starRating}}</td>
+                        <td>
+                            <ai-star [rating]='product.starRating'></ai-star>
+                        </td>
                     </tr>
 
                     </tbody>
