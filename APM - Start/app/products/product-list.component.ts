@@ -1,5 +1,5 @@
 import { Component } from 'angular2/core';
-import { IProduct } from '/product.ts';
+import { IProduct } from './product';
 
 @Component({
     selector: 'pm-products',
@@ -10,6 +10,7 @@ export class ProductListComponent {
     pageTitle:string = 'Product List';
     showImage:boolean = true;
     listFilter:string = 'cart';
+    message:string;
     products:Iproduct[] = [
         {
             "productId": 1,
