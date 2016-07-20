@@ -1,7 +1,7 @@
 /**
  * Created by delonghuang on 18/07/16.
  */
-import { Component, OnChanges, Input} from 'angular2/core';
+import { Component, OnChanges, Input, Output, EventEmitter} from 'angular2/core';
 
 @Component({
     selector: 'ai-star',
@@ -10,9 +10,15 @@ import { Component, OnChanges, Input} from 'angular2/core';
 })
 export class StarComponent implements OnChanges{
     @Input() rating:number;
+    @Output() notify:EventEmitter<string> = new EventEmitter<string>();
     starWidth:number;
 
-    Onchanges():viod {
-        return this.starWidth = this.rating  * 86 / 6;
+    ngOnChanges():viod {
+        return this.starWidth = this.rating * 86 / 5;
+    }
+
+    onClick():void {
+        console.log('Rate star clicked');
+        this.notify.emit(this.rating.toString() + ' clicked!');
     }
 }

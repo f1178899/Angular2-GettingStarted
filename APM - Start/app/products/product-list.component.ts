@@ -73,4 +73,8 @@ export class ProductListComponent {
     toggleImage():viod {
         this.showImage = !this.showImage;
     }
+
+    onNotify(message:string):void {
+        console.warn(message + ' received from parent')
+    }
 }

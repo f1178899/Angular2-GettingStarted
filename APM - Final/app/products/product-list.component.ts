@@ -38,6 +38,7 @@ export class ProductListComponent implements OnInit {
     }
 
     onRatingClicked(message: string): void {
+        ALERT('HHHJ' + message);
         this.pageTitle = 'Product List: ' + message;
     }
 }
